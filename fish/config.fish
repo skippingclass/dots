@@ -26,3 +26,9 @@ end
 
 # opencode
 fish_add_path /home/idgaf/.opencode/bin
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/idgaf/.local/bin" $PATH
+
+fish_add_path /home/idgaf/.spicetify
