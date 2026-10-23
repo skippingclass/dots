@@ -13,9 +13,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
     fastfetch
     # Use starship
   # starship init fish | source
-    if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-        cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-    end
 
     # Aliases
     alias pamcan pacman
@@ -24,11 +21,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
     
 end
 
-# opencode
-fish_add_path /home/idgaf/.opencode/bin
-
-
-# Added by Antigravity CLI installer
-set -gx PATH "/home/idgaf/.local/bin" $PATH
-
-fish_add_path /home/idgaf/.spicetify
+fish_add_path ~/.local/bin
+fish_add_path ~/.opencode/bin
+fish_add_path ~/.spicetify

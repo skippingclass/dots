@@ -291,8 +291,8 @@ spawn-at-startup "waybar" // waybar
 spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark" // gtk dark theme
 spawn-at-startup "gentoo-pipewire-launcher" // sound
 spawn-at-startup "xwayland-satellite" // x11 satellite
-spawn-at-startup "sh" "-c" "sleep 2 && pano-scrobbler -m" // sleep 2 cuz pano-scrobbler faster than tray init
-spawn-at-startup "swaybg" "-o" "DP-3" "-i" "/home/idgaf/down the drain wallpaper.jpeg" "-m" "fill" "-o" "HDMI-A-1" "-i" "/home/idgaf/waves.jpeg" "-m" "fill" // wallpaper
+spawn-sh-at-startup "sleep 2 && pano-scrobbler -m" // sleep 2 cuz pano-scrobbler faster than tray init
+spawn-sh-at-startup "swaybg -o DP-3 -i ~/.config/niri/wallpapers/down_the_drain.jpeg -m fill -o HDMI-A-1 -i ~/.config/niri/wallpapers/waves.jpeg -m fill" // wallpaper
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -628,7 +628,7 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
-    Mod+Shift+S { spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy"; }
+    Mod+Shift+S { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
